@@ -16,10 +16,9 @@
     "url": "https://github.com/RobinBlomberg/sqlite-compiler/issues"
   },
   "homepage": "https://github.com/RobinBlomberg/sqlite-compiler#readme",
-  "dependencies": {},
   "devDependencies": {
     "@robinblomberg/eslint-config-robinblomberg": "^0.2.22",
-    "@robinblomberg/sqlite-ast": "^0.13.0",
+    "@robinblomberg/sqlite-ast": "^0.16.0",
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
     "c8": "^7.3.5",
