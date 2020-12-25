@@ -12,7 +12,7 @@
     "target": "ESNext"
   },
   "include": [
-    "**/*.js",
-    "**/*.ts"
+    "./lib/*.js",
+    "./lib/*.ts"
   ]
 }
