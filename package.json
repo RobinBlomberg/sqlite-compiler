@@ -1,6 +1,6 @@
 {
   "name": "@robinblomberg/sqlite-compiler",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "type": "module",
   "main": "lib/index.js",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/RobinBlomberg/sqlite-compiler#readme",
   "devDependencies": {
     "@robinblomberg/eslint-config-robinblomberg": "^0.2.22",
-    "@robinblomberg/sqlite-ast": "^0.39.0",
+    "@robinblomberg/sqlite-ast": "^0.47.0",
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
     "c8": "^7.3.5",
@@ -27,6 +27,7 @@
   },
   "scripts": {
     "coverage": "c8 --report-dir .coverage --temp-directory .coverage/tmp npm test",
+    "coverage:html": "c8 --report-dir .coverage --reporter=html --temp-directory .coverage/tmp npm test",
     "test": "mocha ./{,!(node_modules)/**}**.test.js",
     "test:dev": "mocha ./{,!(node_modules)/**}**.test.js --parallel --watch"
   }
