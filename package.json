@@ -1,6 +1,6 @@
 {
   "name": "@robinblomberg/sqlite-compiler",
-  "version": "0.1.7",
+  "version": "0.2.0-beta1",
   "description": "",
   "type": "module",
   "main": "lib/index.js",
@@ -26,9 +26,13 @@
     "mocha": "^8.2.1"
   },
   "scripts": {
+    "check": "tsc",
     "coverage": "c8 --report-dir .coverage --temp-directory .coverage/tmp npm test",
     "coverage:html": "c8 --report-dir .coverage --reporter=html --temp-directory .coverage/tmp npm test",
+    "lint": "eslint **/*.{js,ts}",
+    "lint:fix": "eslint **/*.{js,ts} --fix",
     "test": "mocha ./{,!(node_modules)/**}**.test.js",
+    "test:compile": "mocha ./{,!(node_modules)/**}compile.test.js --parallel --watch",
     "test:dev": "mocha ./{,!(node_modules)/**}**.test.js --parallel --watch"
   }
 }

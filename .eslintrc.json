@@ -2,5 +2,9 @@
   "env": {
     "mocha": true
   },
-  "extends": "@robinblomberg/robinblomberg"
+  "extends": "@robinblomberg/robinblomberg",
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "import/named": "off"
+  }
 }
