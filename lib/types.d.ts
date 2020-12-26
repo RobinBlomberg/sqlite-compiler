@@ -1,4 +1,4 @@
-import { AST } from '@robinblomberg/sqlite-ast';
+import { AST, Nodes } from '@robinblomberg/sqlite-ast';
 
 declare function compile(node: AST.Node): string;
 
@@ -7,4 +7,4 @@ export type Token = {
   value: string;
 };
 
-export { AST };
+export { AST, Nodes };

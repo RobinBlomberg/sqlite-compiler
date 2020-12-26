@@ -1,6 +1,6 @@
 {
   "name": "@robinblomberg/sqlite-compiler",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "",
   "type": "module",
   "main": "lib/index.js",
