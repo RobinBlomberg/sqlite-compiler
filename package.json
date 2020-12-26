@@ -1,6 +1,6 @@
 {
   "name": "@robinblomberg/sqlite-compiler",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "",
   "type": "module",
   "main": "lib/index.js",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/RobinBlomberg/sqlite-compiler#readme",
   "dependencies": {
-    "@robinblomberg/sqlite-ast": "^0.47.0"
+    "@robinblomberg/sqlite-ast": "^0.48.0"
   },
   "devDependencies": {
     "@robinblomberg/eslint-config-robinblomberg": "^0.2.24",
