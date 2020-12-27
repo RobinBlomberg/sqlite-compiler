@@ -1,0 +1,13 @@
+{
+  "branches": 80,
+  "check-coverage": true,
+  "functions": 100,
+  "lines": 95,
+  "report-dir": ".coverage",
+  "reporter": [
+    "html",
+    "text"
+  ],
+  "statements": 95,
+  "temp-directory": ".coverage/tmp"
+}
