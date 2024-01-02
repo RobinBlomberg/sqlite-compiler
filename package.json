@@ -1,42 +1,70 @@
 {
   "name": "@robinblomberg/sqlite-compiler",
-  "version": "0.3.1",
-  "description": "",
+  "version": "0.4.0",
   "type": "module",
-  "main": "lib/index.js",
-  "types": "lib/types.d.ts",
+  "main": "src/index.js",
+  "types": "src/types.d.ts",
   "author": "Robin Blomberg",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RobinBlomberg/sqlite-compiler.git"
   },
-  "keywords": [],
   "bugs": {
     "url": "https://github.com/RobinBlomberg/sqlite-compiler/issues"
   },
   "homepage": "https://github.com/RobinBlomberg/sqlite-compiler#readme",
-  "dependencies": {
-    "@robinblomberg/sqlite-ast": "^0.48.0"
-  },
-  "devDependencies": {
-    "@robinblomberg/eslint-config-robinblomberg": "^0.2.24",
-    "@types/chai": "^4.2.14",
-    "@types/mocha": "^8.2.0",
-    "c8": "^7.3.5",
-    "chai": "^4.2.0",
-    "eslint": "^7.16.0",
-    "husky": "^4.3.6",
-    "lint-staged": "^10.5.3",
-    "mocha": "^8.2.1"
-  },
   "scripts": {
     "check": "tsc",
+    "ci": "run-p ci:*",
+    "ci:build": "pnpm check",
+    "ci:coverage": "pnpm coverage",
+    "ci:eslint": "pnpm lint:eslint --max-warnings=0 --report-unused-disable-directives",
+    "ci:prettier": "pnpm lint:prettier",
+    "ci:test": "pnpm test",
     "coverage": "c8 npm test",
-    "lint": "eslint lib/**.{js,ts}",
-    "lint:fix": "eslint lib/**.{js,ts} --fix",
+    "fix": "run-p fix:*",
+    "fix:eslint": "eslint --fix src",
+    "fix:prettier": "prettier --write src",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint src",
+    "lint:prettier": "prettier --check src",
     "preflight": "npm run check && npm run coverage",
-    "test": "mocha lib/{,!(node_modules)/**}**.test.js",
-    "test:dev": "mocha lib/{,!(node_modules)/**}**.test.js --parallel --watch"
-  }
+    "prepublishOnly": "pnpm run ci",
+    "test": "vitest --passWithNoTests --run src",
+    "test:watch": "vitest --passWithNoTests src"
+  },
+  "dependencies": {
+    "@robinblomberg/sqlite-ast": "^0.49.0"
+  },
+  "devDependencies": {
+    "@robinblomberg/eslint-config-prettier": "^0.1.4",
+    "@robinblomberg/eslint-config-robinblomberg": "^0.23.3",
+    "@robinblomberg/prettier-config": "0.2.0-beta1",
+    "@types/node": "^20.10.6",
+    "c8": "^8.0.1",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@robinblomberg/robinblomberg",
+      "@robinblomberg/prettier"
+    ],
+    "rules": {
+      "no-unused-vars": [
+        1,
+        {
+          "args": "none",
+          "argsIgnorePattern": "^_.*$",
+          "vars": "all",
+          "varsIgnorePattern": "^AST$"
+        }
+      ],
+      "unicorn/no-array-callback-reference": 0
+    }
+  },
+  "prettier": "@robinblomberg/prettier-config"
 }

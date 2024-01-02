@@ -1,3 +1,0 @@
-{
-  "*.{js,ts}": "cross-env CI=true eslint --fix"
-}
